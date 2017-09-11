@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MovieCard from './MovieCard';
+import MovieList from './MovieList';
 
 class App extends Component {
   constructor(props){
@@ -25,18 +26,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <MovieCard
-          img = {this.state.movies[0].img}
-          fav = {this.state.movies[0].fav}
-          title = {this.state.movies[0].title}
-          description = {this.state.movies[0].description}
+          <MovieList
+            movies = {this.state.movies}
           />
-          <MovieCard
-            img = {this.state.movies[1].img}
-            fav = {this.state.movies[1].fav}
-            title = {this.state.movies[1].title}
-            description = {this.state.movies[1].description}
-            />
       </div>
     );
   }
