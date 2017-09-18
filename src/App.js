@@ -39,12 +39,18 @@ updateSearch(text){
   this.setState({search: text})
 }
 
+filterMovies(){
+return this.state.movies.filter(movie => {
+  return movie.title.toUpperCase().includes(this.state.search.toUpperCase())
+} )
+}
+
   render() {
     return (
       <div className="App">
-          <Search updateSearch = {this.updateSearch.bind(this)} />
+          <Search updateSearch = {this.updateSearch.bind(this)}/>
           <MovieList
-            movies = {this.state.movies}
+            movies = {this.filterMovies()}
             handleFav = {this.toggleFav.bind(this)}
           />
       </div>
