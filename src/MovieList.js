@@ -12,6 +12,8 @@ class MovieList extends React.Component {
              fav = {movie.fav}
              title = {movie.title}
              description = {movie.description}
+             id = {movie.id}
+             handleFav = {this.props.handleFav}
            />
            </li>
          )
